@@ -7,7 +7,7 @@ async function checkStockExists(req, res, next){
 
     if(response){
        return res.status(409).json({
-           msg: "Stock already exists. Please update the existing stock instead of adding a new one."
+           msg: "Stock already exists. Please update the existing stock."
        })
     }
 

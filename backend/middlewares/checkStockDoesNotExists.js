@@ -7,7 +7,7 @@ async function checkStockDoesNotExist(req, res, next){
 
     if(!response){
         return res.status(409).json({
-            msg: "Stock does not exists. Please add a new one instead of updating the existing stock ."
+            msg: "Stock does not exists. Please add a new one."
         })
     }
 
