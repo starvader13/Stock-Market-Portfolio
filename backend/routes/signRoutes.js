@@ -6,10 +6,10 @@ const {User} = require("../db/script");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 
-const route = Router();
+const signRoute = Router();
 const jwtSecret = process.env.JWT_SECRET_STRING;
 
-route.post("/signup", signInputValidation, usernameInputValidation, userExists, async (req, res)=>{
+signRoute.post("/signup", signInputValidation, usernameInputValidation, userExists, async (req, res)=>{
     if(req.exists){
         return res.status(409).json({
             msg: "User Already Exists. Please SignIn"
@@ -34,7 +34,7 @@ route.post("/signup", signInputValidation, usernameInputValidation, userExists, 
     })
 })
 
-route.post("/signin", signInputValidation, userExists, async(req, res)=>{
+signRoute.post("/signin", signInputValidation, userExists, async(req, res)=>{
     if(!req.exists){
         return res.status(409).json({
             msg: "User Does Not Exists. Please SignUp"
@@ -61,6 +61,4 @@ route.post("/signin", signInputValidation, userExists, async(req, res)=>{
 })
 
 
-module.exports = {
-    route
-};
+module.exports = signRoute;

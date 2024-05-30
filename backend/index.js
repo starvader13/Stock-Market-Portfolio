@@ -1,7 +1,8 @@
 const express = require("express");
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const { route } = require("./routes/route");
+const signRoute = require("./routes/signRoutes");
+const stockRoute = require("./routes/stockRoutes");
 require('dotenv').config();
 
 const app = express();
@@ -12,7 +13,8 @@ app.use(cors({
     origin: "http://localhost:5173/"
 }))
 
-app.use('/api', route);
+app.use('/api', signRoute);
+app.use('/api', stockRoute)
 
 app.use((err, req, res, next)=>{
     res.status(500).json({

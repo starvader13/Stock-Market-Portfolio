@@ -17,7 +17,7 @@ const userSchema = new mongoose.Schema({
 });
 
 const stockSchema = new mongoose.Schema({
-    index: Number,
+    symbol: String,
     name: String,
     description: String,
     price: Number,
