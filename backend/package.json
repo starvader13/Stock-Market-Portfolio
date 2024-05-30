@@ -1,0 +1,25 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "Backend Routes for a Stock Market Portfolio Website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/starvader13/Stock-Market-Portfolio.git"
+  },
+  "keywords": [
+    "Stock-Market"
+  ],
+  "author": "Starvader",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/starvader13/Stock-Market-Portfolio/issues"
+  },
+  "homepage": "https://github.com/starvader13/Stock-Market-Portfolio#readme",
+  "dependencies": {
+    "mongoose": "^8.4.0"
+  }
+}
