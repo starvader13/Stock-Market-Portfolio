@@ -16,7 +16,7 @@ export default function SignUp(){
 
     const signup = useCallback(async ()=>{
         try {
-            const response = await axios.post("http://localhost:4000/api/signup", {
+            const response = await axios.post("/api/signup", {
                 username: usernameDetails,
                 email: signUpDetails.email,
                 password: signUpDetails.password

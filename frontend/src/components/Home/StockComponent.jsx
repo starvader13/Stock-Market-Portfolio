@@ -12,7 +12,7 @@ export default function StockComponent({updateId, index, name, price, symbol, wa
 
     const addToWatchlist = useCallback(async (id)=>{
         try{
-            const response = await axios.put("http://localhost:4000/api/update-watchlist", {objectId: id},{
+            const response = await axios.put("/api/update-watchlist", {objectId: id},{
                 headers: {
                     "authorization": localStorage.getItem("authorization") || ""
                 }
