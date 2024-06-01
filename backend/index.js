@@ -9,9 +9,7 @@ const app = express();
 const port = process.env.PORT || 7000;
 
 app.use(bodyParser.json());
-app.use(cors({
-    origin: "http://localhost:5173/"
-}))
+app.use(cors());
 
 app.use('/api', signRoute);
 app.use('/api', stockRoute)
