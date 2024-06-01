@@ -4,9 +4,11 @@ import {signDetailsAtom, userSignedInAtom} from "../../store/atom.js";
 import axios from "axios";
 import {useCallback, useState} from "react";
 import PopupComponent from "../PopupComponent/PopupComponent.jsx";
+import {useNavigate} from "react-router-dom";
 import("./sign.css");
 
 export default function SignIn(){
+    const navigate = useNavigate();
 
     const signInDetails = useRecoilValue(signDetailsAtom);
     const setUserSignedIn = useSetRecoilState(userSignedInAtom);
@@ -32,6 +34,6 @@ export default function SignIn(){
         {signInData ? <PopupComponent message={signInData} /> : null }
         <Input />
         <div className={"log-in"} onClick={signin}>Log In</div>
-        <div className={"new-account-button"} >Create New Account</div>
+        <div className={"new-account-button"} onClick={()=> navigate("/signup")}>Create New Account</div>
     </div>
 }
