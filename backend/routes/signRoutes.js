@@ -30,7 +30,7 @@ signRoute.post("/signup", signInputValidation, usernameInputValidation, userExis
     }
 
     return res.status(201).json({
-        msg: "User Created Successfully"
+        msg: "User Created Successfully. Please SignIn"
     })
 })
 
@@ -55,7 +55,7 @@ signRoute.post("/signin", signInputValidation, userExists, async(req, res)=>{
     const token = "Bearer " + signature;
 
     return res.status(200).json({
-        msg: "User SignedIn Successfully",
+        msg: `User Logged-In Successfully. Welcome ${userData.username}`,
         token: token
     });
 })
