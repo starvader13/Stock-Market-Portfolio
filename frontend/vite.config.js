@@ -7,7 +7,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'http://localhost:4000',
+        target: 'https://stock-market-portfolio-v6p1.onrender.com',
         changeOrigin: true,
       },
     },

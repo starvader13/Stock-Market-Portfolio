@@ -16,7 +16,7 @@ export default function SignUp(){
 
     const signup = useCallback(async ()=>{
         try {
-            const response = await axios.post("/api/signup", {
+            const response = await axios.post("https://stock-market-portfolio-v6p1.onrender.com/api/signup", {
                 username: usernameDetails,
                 email: signUpDetails.email,
                 password: signUpDetails.password
