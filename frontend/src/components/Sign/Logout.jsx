@@ -1,10 +1,6 @@
 import {Fragment} from "react";
-import {useSetRecoilState} from "recoil";
-import {userSignedInAtom} from "../../store/atom.js";
 
-export default function Logout(){
-
-    const setUserSignedIn = useSetRecoilState(userSignedInAtom)
+export default function Logout({setUserSignedIn}){
 
     const logout = ()=>{
         localStorage.removeItem("authorization");

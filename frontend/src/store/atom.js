@@ -1,5 +1,4 @@
-import {atom, selector} from "recoil";
-import axios from "axios";
+import {atom} from "recoil";
 
 export const signDetailsAtom = atom({
     key: "signDetailsAtom",
@@ -31,5 +30,5 @@ export const updatedWatchlistAtom = atom({
 
 export const updatedWatchlistStateAtom = atom({
     key: "updatedWatchlistStateAtom",
-    default: ""
+    default: false
 })

@@ -2,12 +2,13 @@ import './Navbar.css'
 import {useNavigate} from "react-router-dom";
 import {Fragment} from "react";
 import Logout from "../Sign/Logout.jsx";
-import {useRecoilValue} from "recoil";
+import {useRecoilValue, useSetRecoilState} from "recoil";
 import {userSignedInAtom} from "../../store/atom.js";
 
 export default function Navbar(){
     const navigate = useNavigate();
     const userSignedIn = useRecoilValue(userSignedInAtom);
+    const setUserSignedIn = useSetRecoilState(userSignedInAtom);
 
     return <div className={"navbar"}>
         <div className={"navbar-left"}>
@@ -19,7 +20,7 @@ export default function Navbar(){
                 localStorage.getItem("userEmail") || userSignedIn ?
                     <Fragment >
                         <div>{localStorage.getItem("userEmail")}</div>
-                        <Logout />
+                        <Logout setUserSignedIn={setUserSignedIn} />
                     </Fragment>
                     :
                     <Fragment>
