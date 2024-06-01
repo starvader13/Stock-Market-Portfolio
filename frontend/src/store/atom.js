@@ -1,4 +1,5 @@
-import {atom} from "recoil";
+import {atom, selector} from "recoil";
+import axios from "axios";
 
 export const signDetailsAtom = atom({
     key: "signDetailsAtom",
@@ -16,4 +17,17 @@ export const usernameDetailsAtom = atom({
 export const userSignedInAtom = atom({
     key: "userSignedInAtom",
     default: false
+})
+
+
+export const allStocksAtom = selector({
+    key: "allStocksAtom",
+    get: async ()=>{
+        try{
+            const response = await axios.get("http://localhost:4000/api/stocks");
+            return response.data.stocks;
+        }catch(err){
+            return [];
+        }
+    }
 })

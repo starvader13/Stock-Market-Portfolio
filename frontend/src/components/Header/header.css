@@ -21,7 +21,6 @@
     gap: 30px;
 }
 
-
 .add-to-watchlist-header {
     margin-top: 2px;
     margin-bottom: 2px;
@@ -29,10 +28,18 @@
     cursor: pointer;
 }
 
+.name-price-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 50%;
+}
+
 .price-header {
-    margin-right: 120px;
+    margin-right: 80px;
 }
 
 .name-header {
-    margin-right: 80px;
+    margin-left: 10px;
 }
