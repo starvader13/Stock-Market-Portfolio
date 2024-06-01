@@ -5,6 +5,7 @@ const stockInputValidation = require("../middlewares/stockInputValidation");
 const checkStockExists = require("../middlewares/checkStockExists");
 const checkStockDoesNotExists = require("../middlewares/checkStockDoesNotExists");
 const stockSymbolInputValidation = require("../middlewares/stockSymbolInputValidation");
+const objectInputValidation = require("../middlewares/objectInputValidation");
 
 const stockRoute = Router();
 
@@ -76,5 +77,30 @@ stockRoute.delete("/delete-stocks", checkUserAuthorization, stockSymbolInputVali
         stock: response
     })
 })
+
+stockRoute.put("/update-watchlist", checkUserAuthorization, objectInputValidation, async (req, res, next)=>{
+    const body = req.body;
+
+    const response = await Stock.findOneAndUpdate({_id: body.objectId},
+        [{$set:
+                    {watchlist:
+                            {$not: "$watchlist"}
+                    }
+        }],
+        {new: true}
+    );
+
+    if(!response){
+        return res.status(404).json({
+            msg: "Internal Server Error"
+        });
+    }
+
+    return res.status(200).json({
+        msg: "Watchlist Updated",
+        stock: response
+    })
+})
+
 
 module.exports = stockRoute;
