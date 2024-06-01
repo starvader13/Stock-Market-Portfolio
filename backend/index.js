@@ -16,7 +16,7 @@ app.use('/api', stockRoute)
 
 app.use((err, req, res, next)=>{
     res.status(500).json({
-        msg: "Internal Server, error",
+        msg: "Internal Server Error",
         error: err
     });
 });

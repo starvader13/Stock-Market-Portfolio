@@ -1,19 +1,26 @@
 import {useCallback} from "react";
 import axios from "axios";
+import {useSetRecoilState} from "recoil";
+import {updatedWatchlistAtom} from "../../store/atom.js";
 
 import("./home.css")
 
-export default function StockComponent({updateId, index, name, price, symbol }){
+export default function StockComponent({updateId, index, name, price, symbol, watchlist}){
+
+    const setUpdatedWatchlist = useSetRecoilState(updatedWatchlistAtom)
+
     const addToWatchlist = useCallback(async (id)=>{
         try{
-            const response = await axios.put("http://localhost:4000/api/update-watchlist", {objectId: id}, {
-                "authorization": localStorage.getItem("authorization")
+            const response = await axios.put("http://localhost:4000/api/update-watchlist", {objectId: id},{
+                headers: {
+                    "authorization": localStorage.getItem("authorization") || ""
+                }
             });
-            console.log(response.data.msg);
+            setUpdatedWatchlist(response.data.msg);
         }catch(err){
-            console.log(err.response.data.msg)
+            setUpdatedWatchlist(err.response.data.msg);
         }
-    }, [])
+    }, [setUpdatedWatchlist])
 
     return <div className={"stock-component"}>
         <div className={"index-symbol"}>
@@ -24,6 +31,6 @@ export default function StockComponent({updateId, index, name, price, symbol }){
             <div className={"name"}>{name}</div>
             <div className={"price"}>{price}</div>
         </div>
-        <div className={"add-to-watchlist"} onClick={()=>addToWatchlist(updateId)}>Add To Watchlist</div>
+        <div className={"add-to-watchlist"} onClick={()=>addToWatchlist(updateId)}>{!watchlist? "Add To Watchlist" : "Remove From Watchlist"}</div>
     </div>
 }

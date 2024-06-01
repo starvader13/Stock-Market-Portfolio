@@ -16,7 +16,7 @@ export default function Navbar(){
         </div>
         <div className={"navbar-right"}>
             {
-                userSignedIn ?
+                localStorage.getItem("userEmail") || userSignedIn ?
                     <Fragment >
                         <div>{localStorage.getItem("userEmail")}</div>
                         <Logout />

@@ -19,7 +19,6 @@ export const userSignedInAtom = atom({
     default: false
 })
 
-
 export const allStocksAtom = selector({
     key: "allStocksAtom",
     get: async ()=>{
@@ -30,4 +29,9 @@ export const allStocksAtom = selector({
             return [];
         }
     }
+})
+
+export const updatedWatchlistAtom = atom({
+    key: "updatedWatchlistAtom",
+    default: ""
 })
