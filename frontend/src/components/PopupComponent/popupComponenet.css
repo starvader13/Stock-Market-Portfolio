@@ -1,0 +1,14 @@
+.popup-component {
+    background-color: #808dbc;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    font-size: 20px;
+    line-height: 25px;
+    padding: 10px 20px;
+    color: white;
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+}

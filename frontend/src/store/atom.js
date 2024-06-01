@@ -13,7 +13,7 @@ export const usernameDetailsAtom = atom({
     default: ""
 })
 
-export const signedInAtom = atom({
-    key: "signedInAtom",
+export const userSignedInAtom = atom({
+    key: "userSignedInAtom",
     default: false
 })
