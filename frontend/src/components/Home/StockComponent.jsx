@@ -1,14 +1,14 @@
 import {useCallback} from "react";
 import axios from "axios";
 import {useSetRecoilState} from "recoil";
-import {updatedWatchlistAtom, updatedWatchlistStateAtom} from "../../store/atom.js";
+import {updatedWatchlistAtom, updateAllStockStateAtom} from "../../store/atom.js";
 
 import("./home.css")
 
 export default function StockComponent({updateId, index, name, price, symbol, watchlist}){
 
     const setUpdatedWatchlist = useSetRecoilState(updatedWatchlistAtom);
-    const setUpdatedWatchlistState = useSetRecoilState(updatedWatchlistStateAtom);
+    const setUpdateAllStockState = useSetRecoilState(updateAllStockStateAtom);
 
     const addToWatchlist = useCallback(async (id)=>{
         try{
@@ -21,8 +21,8 @@ export default function StockComponent({updateId, index, name, price, symbol, wa
         }catch(err){
             setUpdatedWatchlist(err.response.data.msg);
         }
-        setUpdatedWatchlistState(updatedWatchlistState => !updatedWatchlistState);
-    }, [setUpdatedWatchlistState, setUpdatedWatchlist])
+        setUpdateAllStockState(updatedWatchlistState => !updatedWatchlistState);
+    }, [setUpdateAllStockState, setUpdatedWatchlist])
 
     return <div className={"stock-component"}>
         <div className={"index-symbol"}>

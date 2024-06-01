@@ -10,7 +10,6 @@ export default function SignIn(){
 
     const signInDetails = useRecoilValue(signDetailsAtom);
     const setUserSignedIn = useSetRecoilState(userSignedInAtom);
-    const userSignedIn = useRecoilValue(userSignedInAtom);
 
     const [signInData, setSignInData] = useState("");
 
@@ -30,7 +29,7 @@ export default function SignIn(){
     }, [signInDetails]);
 
     return <div className={"sign-up"}>
-        {userSignedIn ? <PopupComponent message={signInData} /> : null }
+        {signInData ? <PopupComponent message={signInData} /> : null }
         <Input />
         <div className={"log-in"} onClick={signin}>Log In</div>
         <div className={"new-account-button"} >Create New Account</div>

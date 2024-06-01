@@ -28,7 +28,7 @@ export const updatedWatchlistAtom = atom({
     default: ""
 })
 
-export const updatedWatchlistStateAtom = atom({
-    key: "updatedWatchlistStateAtom",
+export const updateAllStockStateAtom = atom({
+    key: "updateAllStockStateAtom",
     default: false
 })
