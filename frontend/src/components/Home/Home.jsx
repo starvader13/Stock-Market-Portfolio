@@ -3,6 +3,7 @@ import Header from "../Header/Header.jsx";
 import {useRecoilValue, useSetRecoilState} from "recoil";
 import {allStocksAtom, updatedWatchlistAtom} from "../../store/atom.js";
 import PopupComponent from "../PopupComponent/PopupComponent.jsx";
+import {useEffect} from "react";
 import ("./home.css")
 
 export default function Home(){
@@ -11,11 +12,15 @@ export default function Home(){
     const updatedWatchlist = useRecoilValue(updatedWatchlistAtom)
     const setUpdatedWatchlist = useSetRecoilState(updatedWatchlistAtom);
 
-    if(updatedWatchlist){
-        setTimeout(()=>{
-            setUpdatedWatchlist(false);
-        }, 1000)
-    }
+
+
+   useEffect(()=>{
+       const timeout = setTimeout(()=>{
+           setUpdatedWatchlist("");
+       }, 1000)
+
+       if(timeout) clearTimeout(timeout);
+   }, [setUpdatedWatchlist])
 
     return <div>
         <div className={"home"}>
