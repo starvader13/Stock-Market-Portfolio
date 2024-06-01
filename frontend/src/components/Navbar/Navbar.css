@@ -1,0 +1,26 @@
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #222222;
+    color: whitesmoke;
+    border: 2px solid #ddd8ce;
+    border-radius: 5px;
+    padding: 10px;
+    font-family: "Roboto Condensed", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: normal;
+    font-style: normal;
+}
+
+.navbar-left, .navbar-right {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 20px 0 20px;
+    gap: 20px;
+}
+
+.navbar-left div, .navbar-right div {
+    cursor: pointer;
+}

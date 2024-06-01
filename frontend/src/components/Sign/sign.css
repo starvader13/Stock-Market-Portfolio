@@ -1,0 +1,62 @@
+.sign-up {
+    display: flex;
+    height: 90vh;
+    width: auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 5px;
+    padding: 5px;
+    color: white;
+}
+
+.input-box {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.input-box input {
+    font-family: "Roboto Condensed", sans-serif;
+    font-size: 20px;
+    border-radius: 5px;
+    line-height: 48px;
+    padding: 0 16px;
+    width: 332px;
+}
+
+.log-in {
+    display: flex;
+    background-color: #0866ff;
+    border: none;
+    border-radius: 6px;
+    font-size: 20px;
+    line-height: 48px;
+    padding: 0 16px;
+    width: 332px;
+    cursor: pointer;
+    justify-content: center;
+}
+
+.new-account-button {
+    border: none;
+    border-radius: 6px;
+    font-size: 17px;
+    line-height: 48px;
+    padding: 0 16px;
+    cursor: pointer;
+    display: flex;
+    background-color: #42b72a;
+    justify-content: center;
+}
+
+.log-in:active {
+    border: 2px solid #2f73e3;
+    background-color: #2f73e3;
+}
+
+.new-account-button:active {
+    border: 2px solid #6ecd5a;
+    background-color: #6ecd5a;
+}

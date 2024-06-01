@@ -1,0 +1,12 @@
+.watchlist {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.watchlist div{
+    margin: 10px;
+    padding: 10px;
+    font-size: 30px;
+    font-weight: 600;
+}

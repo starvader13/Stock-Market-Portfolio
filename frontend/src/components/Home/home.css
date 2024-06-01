@@ -1,0 +1,43 @@
+.stock-component{
+    margin: 10px;
+    padding: 5px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #ddd8ce;
+    border-radius: 8px;
+    color: #333333;
+    background-color: #8ecae6;
+    line-height: 30px;
+    font-family: "Roboto Condensed", sans-serif;
+    font-size: 20px;
+    font-optical-sizing: auto;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.index-symbol {
+    display: flex;
+    gap: 75px;
+}
+
+.add-to-watchlist {
+    border: none;
+    border-radius: 5px;
+    padding: 3px 16px;
+    background-color: #ffffff;
+    margin: 2px 0;
+    cursor: pointer;
+}
+
+.home {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.home div{
+    margin: 10px;
+    padding: 10px;
+    font-size: 30px;
+    font-weight: 700;
+}
