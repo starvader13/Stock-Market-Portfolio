@@ -19,19 +19,17 @@ export const userSignedInAtom = atom({
     default: false
 })
 
-export const allStocksAtom = selector({
+export const allStocksAtom = atom({
     key: "allStocksAtom",
-    get: async ()=>{
-        try{
-            const response = await axios.get("http://localhost:4000/api/stocks");
-            return response.data.stocks;
-        }catch(err){
-            return [];
-        }
-    }
+    default: []
 })
 
 export const updatedWatchlistAtom = atom({
     key: "updatedWatchlistAtom",
+    default: ""
+})
+
+export const updatedWatchlistStateAtom = atom({
+    key: "updatedWatchlistStateAtom",
     default: ""
 })

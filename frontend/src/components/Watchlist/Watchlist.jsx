@@ -1,12 +1,20 @@
 import Header from "../Header/Header.jsx";
 import StockComponent from "../Home/StockComponent.jsx";
-import {useRecoilValue} from "recoil";
-import {allStocksAtom} from "../../store/atom.js";
+import {useRecoilValue, useSetRecoilState} from "recoil";
+import {allStocksAtom, updatedWatchlistStateAtom} from "../../store/atom.js";
+import {useEffect} from "react";
+import fetchAllStocks from "../../store/fetch.js";
 import("./watchlist.css")
 
 export default function Watchlist(){
 
     const allStocks = useRecoilValue(allStocksAtom);
+    const setAllStocks = useSetRecoilState(allStocksAtom);
+    const updatedWatchlistState = useRecoilValue(updatedWatchlistStateAtom);
+
+    useEffect(() => {
+        fetchAllStocks(setAllStocks);
+    }, [updatedWatchlistState]);
 
     return <div>
         <div className={"watchlist"}>

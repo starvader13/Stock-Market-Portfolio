@@ -1,26 +1,29 @@
 import StockComponent from "./StockComponent.jsx";
 import Header from "../Header/Header.jsx";
 import {useRecoilValue, useSetRecoilState} from "recoil";
-import {allStocksAtom, updatedWatchlistAtom} from "../../store/atom.js";
+import {allStocksAtom, updatedWatchlistAtom, updatedWatchlistStateAtom} from "../../store/atom.js";
 import PopupComponent from "../PopupComponent/PopupComponent.jsx";
 import {useEffect} from "react";
-import ("./home.css")
+import fetchAllStocks from "../../store/fetch.js";
+import ("./home.css");
 
 export default function Home(){
 
     const allStocks = useRecoilValue(allStocksAtom);
+    const setAllStocks = useSetRecoilState(allStocksAtom);
     const updatedWatchlist = useRecoilValue(updatedWatchlistAtom)
     const setUpdatedWatchlist = useSetRecoilState(updatedWatchlistAtom);
+    const updatedWatchlistState = useRecoilValue(updatedWatchlistStateAtom);
 
-
+    useEffect(() => {
+        fetchAllStocks(setAllStocks);
+    }, [updatedWatchlistState]);
 
    useEffect(()=>{
-       const timeout = setTimeout(()=>{
+       setTimeout(()=>{
            setUpdatedWatchlist("");
-       }, 1000)
-
-       if(timeout) clearTimeout(timeout);
-   }, [setUpdatedWatchlist])
+       }, 1000);
+   }, [updatedWatchlistState])
 
     return <div>
         <div className={"home"}>
