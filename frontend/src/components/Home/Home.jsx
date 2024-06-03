@@ -15,9 +15,11 @@ export default function Home(){
     const setUpdatedWatchlist = useSetRecoilState(updatedWatchlistAtom);
     const updateAllStockState = useRecoilValue(updateAllStockStateAtom);
     const userSignedIn = useRecoilValue(userSignedInAtom);
+    const setUserSignedIn = useSetRecoilState(userSignedInAtom);
 
     useEffect(() => {
         fetchAllStocks(setAllStocks);
+        setUserSignedIn(!!localStorage.getItem("authorization"));
     }, [updateAllStockState]);
 
    useEffect(()=>{

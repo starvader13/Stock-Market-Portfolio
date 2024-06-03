@@ -28,6 +28,9 @@
     margin: 2px 0;
     cursor: pointer;
     width: 13%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .name-price {
