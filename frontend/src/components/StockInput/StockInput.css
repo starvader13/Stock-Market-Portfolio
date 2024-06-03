@@ -1,0 +1,46 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    font-family: "Roboto Condensed", sans-serif;
+}
+
+.form input {
+    margin: 20px 10px;
+    padding: 2px 16px;
+    line-height: 48px;
+    width: 25%;
+    font-size: 20px;
+    color: darkslategrey;
+    border-radius: 5px;
+}
+
+.form input:hover{
+    font-weight: 600;
+}
+
+.form button{
+    border: none;
+    width: 25%;
+    color: white;
+    border-radius: 6px;
+    padding: 2px 16px;
+    margin: 10px 5px;
+    font-size: 20px;
+    background-color: #0866ff;
+    line-height: 48px;
+    cursor: pointer;
+}
+
+.add-stocks, .update-stocks, .delete-stocks {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    padding: 10px;
+    font-size: 30px;
+    font-weight: 700;
+}

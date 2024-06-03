@@ -62,7 +62,7 @@ stockRoute.put("/update-stocks", checkUserAuthorization, stockInputValidation, c
 })
 
 stockRoute.delete("/delete-stocks", checkUserAuthorization, stockSymbolInputValidation , checkStockDoesNotExists, async(req, res, next)=>{
-    const {symbol} = req.body;
+    const {symbol} = req.headers;
 
     const response = await Stock.findOneAndDelete({symbol: symbol})
 

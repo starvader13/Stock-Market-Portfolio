@@ -13,7 +13,10 @@ export default function Navbar(){
     return <div className={"navbar"}>
         <div className={"navbar-left"}>
             <div className={"home"} onClick={()=>navigate("/")}>Home</div >
-            <div className={"watchlist"} onClick={()=>navigate("/watchlist")}>Watchlist</div >
+            <div className={"watchlist"} onClick={()=>navigate("/watchlist")}>Watchlist</div>
+            <div className={"add-stock"} onClick={()=>navigate("/add-stock")}> Add Stocks</div>
+            <div className={"update-stock"} onClick={()=>navigate("/update-stock")}>Update Stocks</div>
+            <div className={"delete-stock"} onClick={()=>navigate("/delete-stock")}>Delete Stocks</div>
         </div>
         <div className={"navbar-right"}>
             {
