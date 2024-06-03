@@ -4,7 +4,7 @@ import {useRecoilValue, useSetRecoilState} from "recoil";
 import {allStocksAtom, updatedWatchlistAtom, updateAllStockStateAtom} from "../../store/atom.js";
 import PopupComponent from "../PopupComponent/PopupComponent.jsx";
 import {useEffect} from "react";
-import fetchAllStocks from "../../store/fetch.js";
+import fetchAllStocks from "../../utils/fetch.js";
 import ("./home.css");
 
 export default function Home(){

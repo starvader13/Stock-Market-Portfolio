@@ -1,7 +1,6 @@
 import axios from "axios";
 
 const deleteStocks = async (data)=>{
-    console.log(data)
     try{
         const config = {
             headers: {
@@ -13,9 +12,9 @@ const deleteStocks = async (data)=>{
         data.price = parseInt(data.price);
 
         const response =  await axios.delete("https://stock-market-portfolio-v6p1.onrender.com/api/delete-stocks", config);
-        console.log(response.data.msg);
+        return (response.data.msg);
     } catch(e){
-        console.log(e.response.data.msg);
+        return (e.response.data.msg);
     }
 }
 

@@ -3,7 +3,7 @@ import StockComponent from "../Home/StockComponent.jsx";
 import {useRecoilValue, useSetRecoilState} from "recoil";
 import {allStocksAtom, updateAllStockStateAtom, userSignedInAtom} from "../../store/atom.js";
 import {useEffect} from "react";
-import fetchAllStocks from "../../store/fetch.js";
+import fetchAllStocks from "../../utils/fetch.js";
 import("./watchlist.css")
 
 export default function Watchlist(){

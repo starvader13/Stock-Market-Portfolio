@@ -32,3 +32,11 @@ export const updateAllStockStateAtom = atom({
     key: "updateAllStockStateAtom",
     default: false
 })
+
+export const onSubmitResponseAtom = atom({
+    key: "actionUpdateAtom",
+    default: {
+        msg: "",
+        response: false
+    }
+})
