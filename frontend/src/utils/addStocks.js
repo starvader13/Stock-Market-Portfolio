@@ -10,7 +10,7 @@ const addStocks = async (data)=>{
 
         data.price = parseInt(data.price);
 
-        const response =  await axios.post("http://localhost:4000/api/add-stocks", data, config);
+        const response =  await axios.post("https://stock-market-portfolio-v6p1.onrender.com/api/add-stocks", data, config);
         console.log(response.data.msg);
     } catch(e){
         console.log(e.response.data.msg);
