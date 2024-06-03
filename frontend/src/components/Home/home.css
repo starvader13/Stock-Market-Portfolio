@@ -17,7 +17,10 @@
 
 .index-symbol {
     display: flex;
-    gap: 75px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 10%;
 }
 
 .add-to-watchlist {
