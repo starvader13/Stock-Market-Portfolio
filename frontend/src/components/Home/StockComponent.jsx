@@ -35,9 +35,16 @@ export default function StockComponent({id, index, name, price, symbol, watchlis
                 <div className={"name"}>{name}</div>
                 <div className={"price"}>{price}</div>
             </div>
-            <div className={"add-to-watchlist"} onClick={()=>addToWatchlist(id)}>{ watchlist? "Remove From Watchlist" : "Add To Watchlist"}</div>
-            <button className={"description"} onClick={()=>selectDescription(id)}> {descriptionId === id ? "-" : "+"} </button>
+
+            <div className={"add-watchlist-accordion"}>
+                <div className={"add-to-watchlist"} onClick={()=>addToWatchlist(id)}>{ watchlist? "Remove From Watchlist" : "Add To Watchlist"}</div>
+                <div className={"button-accordion"}>
+                    <button onClick={()=>selectDescription(id)} > {descriptionId === id ? "-" : "+"} </button>
+                </div>
+
+            </div>
+
         </div>
-        <div>{descriptionId === id ? description : null}</div>
+        <div className={descriptionId === id ? "accordion" : null}>{descriptionId === id ? description : null}</div>
     </div>
 }

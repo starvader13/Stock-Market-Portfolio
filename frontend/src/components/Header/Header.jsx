@@ -12,5 +12,6 @@ export default function Header(){
             <div className={"price-header"}>Price</div>
         </div>
         <div className={"add-to-watchlist-header"}>Watchlist</div>
+        <div>Expand</div>
     </div>
 }

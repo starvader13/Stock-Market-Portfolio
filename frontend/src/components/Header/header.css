@@ -18,7 +18,7 @@
 
 .index-symbol-header {
     display: flex;
-    gap: 30px;
+    gap: 77px;
 }
 
 .add-to-watchlist-header {
@@ -34,12 +34,17 @@
     justify-content: space-between;
     align-items: flex-end;
     width: 50%;
+    margin-right: 45px;
 }
 
 .price-header {
-    margin-right: 80px;
+    margin-right: 85px;
 }
 
 .name-header {
     margin-left: 10px;
+}
+
+.add-to-watchlist-header{
+    margin-right: 0;
 }
