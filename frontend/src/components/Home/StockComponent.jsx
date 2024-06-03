@@ -8,7 +8,7 @@ import("./home.css")
 export default function StockComponent({updateId, index, name, price, symbol, watchlist}){
 
     const setUpdatedWatchlist = useSetRecoilState(updatedWatchlistAtom);
-    const setUpdateAllStockState = useSetRecoilState(updateAllStockStateAtom);
+    const setUpdateAllStockState= useSetRecoilState(updateAllStockStateAtom);
 
     const addToWatchlist = useCallback(async (id)=>{
         try{
@@ -33,6 +33,6 @@ export default function StockComponent({updateId, index, name, price, symbol, wa
             <div className={"name"}>{name}</div>
             <div className={"price"}>{price}</div>
         </div>
-        <div className={"add-to-watchlist"} onClick={()=>addToWatchlist(updateId)}>{!watchlist? "Add To Watchlist" : "Remove From Watchlist"}</div>
+        <div className={"add-to-watchlist"} onClick={()=>addToWatchlist(updateId)}>{ watchlist? "Remove From Watchlist" : "Add To Watchlist"}</div>
     </div>
 }
