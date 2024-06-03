@@ -3,7 +3,7 @@ import Header from "../Header/Header.jsx";
 import {useRecoilValue, useSetRecoilState} from "recoil";
 import {allStocksAtom, updatedWatchlistAtom, updateAllStockStateAtom, userSignedInAtom} from "../../store/atom.js";
 import PopupComponent from "../PopupComponent/PopupComponent.jsx";
-import {useEffect} from "react";
+import {useEffect, useState} from "react";
 import fetchAllStocks from "../../utils/fetch.js";
 import ("./home.css");
 
@@ -16,6 +16,12 @@ export default function Home(){
     const updateAllStockState = useRecoilValue(updateAllStockStateAtom);
     const userSignedIn = useRecoilValue(userSignedInAtom);
     const setUserSignedIn = useSetRecoilState(userSignedInAtom);
+
+    const [homeDescriptionId, setHomeDescriptionId] = useState(null);
+
+    const selectDescription = (id) =>{
+        homeDescriptionId === id ? setHomeDescriptionId(null) : setHomeDescriptionId(id);
+    }
 
     useEffect(() => {
         fetchAllStocks(setAllStocks);
@@ -41,7 +47,17 @@ export default function Home(){
         {
             allStocks.map((stock, index)=>{
                 index+=1;
-                return <StockComponent key={stock._id} updateId={stock._id} index={index} name={stock.name} price={stock.price} symbol={stock.symbol} watchlist={userSignedIn ? stock.watchlist : false}/>
+                return <StockComponent
+                    key={stock._id}
+                    id={stock._id}
+                    index={index}
+                    name={stock.name}
+                    price={stock.price}
+                    symbol={stock.symbol}
+                    watchlist={userSignedIn ? stock.watchlist : false}
+                    description={stock.description}
+                    selectDescription={selectDescription}
+                    descriptionId={homeDescriptionId}/>
             })
         }
     </div>
