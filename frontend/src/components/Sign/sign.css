@@ -11,6 +11,9 @@
     color: white;
 }
 
+.error{
+    color: red; 
+}
 .input-box {
     display: flex;
     flex-direction: column;
